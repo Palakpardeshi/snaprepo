@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS World - Amazon S3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      color: #ff9900;
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 2.7em;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 1.05em;
+      color: #ddd;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    section {
+      padding: 35px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #000;
+      margin-bottom: 14px;
+      font-size: 1.8em;
+    }
+
+    section p {
+      font-size: 1.05em;
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      color: #ff9900;
+      font-weight: bold;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #111;
+      color: #f1f1f1;
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    iframe {
+      width: 100%;
+      height: 360px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    ul {
+      margin-left: 25px;
+      margin-bottom: 10px;
+    }
+
+    ol {
+      margin-left: 25px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #bbb;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 30px;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      iframe {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📦 Amazon S3 – Simple Storage Service</h1>
+    <p>
+      Welcome to the <span class="highlight">AWS S3 World</span> — your secure and scalable cloud storage platform for hosting websites, managing files, and more.
+    </p>
+  </header>
+
+  <section>
+    <h2>🔍 What is Amazon S3?</h2>
+    <p>
+      <span class="highlight">S3</span> stands for <strong>Simple Storage Service</strong>, a powerful and reliable cloud object storage solution from AWS. It allows you to store, retrieve, and manage data of any size from anywhere on the internet.
+    </p>
+    <p>
+      You can use Amazon S3 for a variety of purposes such as backing up important data, hosting images and videos, storing audio files, documents, logs, and even entire static websites.
+    </p>
+  </section>
+
+  <section>
+    <h2>🎥 Watch: Introduction to Amazon S3</h2>
+    <p>Here’s a quick video that explains the basics of AWS S3 in simple language:</p>
+    <iframe src="https://www.youtube.com/embed/JIbIYCM48to" title="Amazon S3 Explained - AWS S3 Tutorial" allowfullscreen></iframe>
+  </section>
+
+  <section>
+    <h2>🪣 Understanding Buckets</h2>
+    <p>
+      In Amazon S3, data is stored in containers called <span class="highlight">buckets</span>. A bucket is like a root folder where you upload files and manage permissions. Each bucket has a globally unique name and can contain unlimited objects.
+    </p>
+    <p>
+      You can create folders inside buckets to organize your content. Every file you upload to a bucket is referred to as an <strong>object</strong> and has a unique key (name).
+    </p>
+  </section>
+
+  <section>
+    <h2>📁 What Can You Upload to S3?</h2>
+    <p>
+      Amazon S3 supports virtually any file type, including:
+    </p>
+    <ul>
+      <li>🖼️ Images: .jpg, .png, .gif, .svg</li>
+      <li>🎬 Videos: .mp4, .avi, .mov</li>
+      <li>🎵 Audio: .mp3, .wav, .aac</li>
+      <li>📄 Documents: .pdf, .docx, .pptx, .txt</li>
+      <li>💻 Code & Files: .html, .css, .js, .zip, .csv, etc.</li>
+    </ul>
+    <p>
+      All files can be made private or public, and can be accessed through a URL if permissions are set.
+    </p>
+  </section>
+
+  <section>
+    <h2>🌐 Hosting a Static Website on S3</h2>
+    <p>
+      One of the most popular uses of Amazon S3 is to host static websites. This means you can upload your HTML, CSS, images, and JavaScript files to a bucket and make them accessible via a web address.
+    </p>
+    <p>
+      Steps to host a website:
+    </p>
+    <ol>
+      <li>Create a new S3 bucket with a unique name.</li>
+      <li>Enable <span class="highlight">Static Website Hosting</span> in bucket properties.</li>
+      <li>Upload your website files (e.g., index.html, error.html).</li>
+      <li>Set index and error document names.</li>
+      <li>Make the files public (or use CloudFront for secure distribution).</li>
+      <li>Access your site via the S3-generated website URL.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>⭐ Key Benefits</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🗂️ Unlimited Storage</h3>
+        <p>Store any volume of data without worrying about scaling or limits.</p>
+      </div>
+      <div class="card">
+        <h3>🔐 Security</h3>
+        <p>Built-in encryption and fine-grained access control via IAM roles and policies.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Performance</h3>
+        <p>Low-latency access with global availability and multi-region support.</p>
+      </div>
+      <div class="card">
+        <h3>🧩 Easy Integration</h3>
+        <p>Works smoothly with AWS services like Lambda, EC2, CloudFront, Route 53, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 AWS World - S3 Service | Designed with ❤️ by <strong>Palak Pardeshi</strong>
+  </footer>
+
+</body>
+</html>
